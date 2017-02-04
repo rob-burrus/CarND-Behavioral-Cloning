@@ -58,8 +58,8 @@ X_train, y_train = shuffle(X_train_image_paths, y_train)
 
 X_train = np.array(X_train)
 y_train = np.array(y_train)
-X_val = np.array(X_val)
-y_val = np.array(y_val)
+#X_val = np.array(X_val)
+#y_val = np.array(y_val)
 
 
 X_train = getImages(X_train)
