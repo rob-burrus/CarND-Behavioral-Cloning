@@ -63,7 +63,7 @@ y_train = np.array(y_train)
 
 
 X_train = getImages(X_train)
-X_train = grascale(X_train)
+X_train = grayscale(X_train)
 X_train = normalize(X_train)
 #
 #
