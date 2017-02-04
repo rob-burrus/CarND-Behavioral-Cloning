@@ -10,6 +10,7 @@ from keras.layers.pooling import MaxPooling2D
 import cv2
 from PIL import Image
 
+tf.python.control_flow_ops = tf
 
 def getImages(image_paths):
     features = np.empty([len(image_paths), 40, 80, 3])
@@ -116,7 +117,8 @@ history = model.fit_generator(generate(X_train, y_train, 128),
                               len(X_train),
                               10,
                               validation_data=(generate(X_val, y_val, 128)),
-                              nb_val_samples=len(X_val), verbose=1)
+                              nb_val_samples=len(X_val), verbose=1, max_q_size=1,
+                              pickle_safe=False)
 
 
 #
