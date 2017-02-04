@@ -95,8 +95,7 @@ model.compile('adam', 'mse', ['accuracy'])
 history = model.fit(X_train, y_train,
                               10,
                               validation_split=0.2,
-                              verbose=1, max_q_size=1,
-                              pickle_safe=False)
+                              verbose=1)
 
 
 #
