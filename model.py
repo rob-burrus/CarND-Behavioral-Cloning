@@ -113,10 +113,10 @@ model = Sequential([
 #
 model.compile('adam', 'mse', ['accuracy'])
 
-history = model.fit_generator(generate(X_train, y_train, 128),
+history = model.fit_generator(generate(X_train, y_train, 32),
                               len(X_train),
                               10,
-                              validation_data=(generate(X_val, y_val, 128)),
+                              validation_data=(generate(X_val, y_val, 32)),
                               nb_val_samples=len(X_val), verbose=1, max_q_size=1,
                               pickle_safe=False)
 
@@ -126,9 +126,8 @@ history = model.fit_generator(generate(X_train, y_train, 128),
 # Save the Model
 #
 #
-json = model.to_json()
-model.save_weights('save/model.h5')
-with open('save/model.json', 'w') as f:
-    f.write(json)
+model.save_weights('model.h5')
+with open('model.json', 'w') as f:
+    f.write(model.to_json())
 
 print('Done')
