@@ -55,7 +55,7 @@ def generate_validation(x, y, batch_size):
 def get_left_right(center_images, left_images, right_images, center_angles):
     lr_paths = []
     lr_angles = []
-    correction = 0.25
+    correction = 0.225
     for i, angle in enumerate(center_angles):
         #img_paths.append(center_images[i])
         lr_paths.append(left_images[i])
